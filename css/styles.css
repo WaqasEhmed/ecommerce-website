@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:700|Playfair+Display");
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.wrapper {
+  width: 1140px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.banner {
+  background-color: #3a3b49;
+  background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z' fill='%2331323d' fill-opacity='0.85' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+.banner h1 {
+  color: white;
+  text-transform: uppercase;
+  padding: 2em 0;
+  margin: 0;
+  font-size: 5em;
+  line-height: 1em;
+}
+
+.nav {
+  background: #31323d;
+}
+.nav a, .nav label {
+  text-transform: uppercase;
+  font-size: 1.25em;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  margin-right: 2em;
+}
+.nav a:hover, .nav label:hover {
+  color: #4ad7b1;
+}
+.nav label {
+  margin-right: 0;
+  border-right: 1px solid #4ad7b1;
+  padding-right: 1.5em;
+}
+.nav label:hover {
+  color: white;
+}
+.nav input[type="search"] {
+  background: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  font-style: italic;
+  font-size: 1.25em;
+  font-weight: 400;
+  padding: 2em 1em;
+}
+
+.resources {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.resources li {
+  width: 25%;
+  float: left;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+.resources li img {
+  width: 100%;
+  max-width: 100%;
+}
+.resources li .resource_info {
+  background: rgba(74, 215, 177, 0.85);
+  padding: 2em 10%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+.resources li .resource_info h2 {
+  color: white;
+  font-size: 1.5em;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+.resources li .resource_info .button {
+  border: 2px solid white;
+  padding: 1em 1.5em;
+  border-radius: .5em;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: .9em;
+  font-weight: 700;
+  transition: all .2s ease-in-out;
+}
+.resources li .resource_info .button:hover {
+  border: 2px solid #31323d;
+  color: #31323d;
+}
+.resources li .resource_info .price {
+  display: inline;
+  font-weight: 700;
+  color: white;
+  padding-left: 1.5em;
+}
+.resources li:hover img {
+  transform: scale(1.5);
+  transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+.resources li:hover .resource_info {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: transform 0.4s, opacity 0.1s;
+}
+
+@media only screen and (max-width: 1250px) {
+  .resources li {
+    width: 33.33%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .banner h1 {
+    padding: .5em 0;
+    font-size: 3.5em;
+  }
+
+  .nav a, .nav label {
+    font-size: 1.1em;
+    margin-right: 1em;
+  }
+  .nav a input[type="search"], .nav label input[type="search"] {
+    font-size: 1.1em;
+    padding: 1.5em .5em;
+  }
+  .nav .resources li {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .banner h1 {
+    font-size: 2.5em;
+  }
+
+  .nav a {
+    display: none;
+  }
+
+  .resources li {
+    width: 100%;
+  }
+}
